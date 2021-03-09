@@ -1,0 +1,1 @@
+mvn archetype:generate -DgroupId=AZDemo -DartifactId=DemoAzPipeLine -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
