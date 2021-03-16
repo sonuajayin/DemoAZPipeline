@@ -40,7 +40,7 @@ steps:
     azureSubscription: 'AZJavaConnection'
     appType: 'webApp'
     appName: 'azdemojava'
-    package: '$(System.ArtifactStagingDirectory)/**/*.war'
+    package: '$(Build.ArtifactStagingDirectory)/**/*.war'
 
 
 
