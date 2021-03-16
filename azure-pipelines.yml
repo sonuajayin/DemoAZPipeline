@@ -37,7 +37,7 @@ steps:
 
 - task: AzureWebApp@1
   inputs:
-    azureSubscription: '<Azure service connection>'
+    azureSubscription: 'AZJavaConnection'
     appType: 'webApp'
     appName: 'azdemojava'
     package: '$(System.ArtifactStagingDirectory)/**/*.war'
