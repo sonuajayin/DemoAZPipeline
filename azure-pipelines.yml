@@ -11,6 +11,7 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: "Maven Build & Test"
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -21,7 +22,8 @@ steps:
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
     codeCoverageToolOption: JaCoCo
-- script: |
-    echo Starting the build
-    mvn package
-  displayName: 'Build with Maven'
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'AZDemo'
+    publishLocation: 'Container'
