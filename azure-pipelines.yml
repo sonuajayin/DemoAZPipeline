@@ -35,4 +35,12 @@ steps:
     artifact: 'AZDemo'
     publishLocation: 'pipeline'
 
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: '<Azure service connection>'
+    appType: 'webApp'
+    appName: 'azdemojava'
+    package: '$(System.ArtifactStagingDirectory)/**/*.war'
+
+
 
