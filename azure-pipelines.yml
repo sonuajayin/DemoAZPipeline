@@ -23,24 +23,5 @@ steps:
     goals: 'package'
     codeCoverageToolOption: JaCoCo
 
-- task: CopyFiles@2
-  inputs:
-    SourceFolder: '$(Build.SourcesDirectory)'
-    Contents: '**/target/*.war'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
-
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)'
-    artifact: 'AZDemo'
-    publishLocation: 'pipeline'
-
-- task: AzureWebApp@1
-  inputs:
-    azureSubscription: 'AZJavaConnection'
-    appType: 'webApp'
-    appName: 'azdemojava'
-    package: '$(Build.ArtifactStagingDirectory)/**/*.war'
-
 
 
