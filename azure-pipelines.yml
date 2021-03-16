@@ -34,3 +34,4 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'AZDemo'
     publishLocation: FilePath
+    TargetPath: '$(Build.ArtifactStagingDirectory)'
