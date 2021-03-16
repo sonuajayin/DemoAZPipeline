@@ -29,9 +29,10 @@ steps:
     Contents: '**/target/*.war'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-- task: PublishBuildArtifacts@1
+- task: PublishPipelineArtifact@1
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'AZDemo'
-    publishLocation: FilePath
-    TargetPath: '$(Build.ArtifactStagingDirectory)'
+    targetPath: '$(Build.ArtifactStagingDirectory)'
+    artifact: 'AZDemo'
+    publishLocation: 'pipeline'
+
+
